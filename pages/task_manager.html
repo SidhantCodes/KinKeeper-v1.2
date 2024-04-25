@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+  <link rel="stylesheet" href="../styles/task_manager.css">
+</head>
+
+<body ng-app="myApp">
+  <main>
+    <h1 id="head">
+      Hello
+    </h1>
+    <p id="quote">
+      "Embrace the sunshine in your soul and let your smile paint the world in bright hues."
+    </p>
+    <ng-view ng-controller="MainController">
+      <p id="quote">{{quote}}</p>
+    </ng-view>
+
+
+    <div class="functions">
+      <div id="tskmgr">
+        <section class="section-view">
+          <h2 class="centered-title">Your Pending Tasks</h2>
+          <div class="centered-container no-task-message">
+            You don't have any tasks for the moment.
+          </div>
+          <ul id="task-list" class="centered-container"></ul>
+          <button id="button-add" class="button-add animation-expand">+</button>
+        </section>
+
+        <section class="section-add-edit">
+          <h2 class="centered-title form-create-mode">Add a New Task</h2>
+          <h2 class="centered-title form-edit-mode">Edit The Task</h2>
+
+          <div class="centered-container">
+            <form id="form">
+              <input id="task-id" type="hidden" />
+
+              <div class="form-group">
+                <label for="task-name" class="form-label">Task Name</label>
+                <input id="task-name" type="text" class="input-text" />
+                <div id="input-error-name" class="input-error">Write a name.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="task-deadline" class="form-label">Deadline</label>
+
+                <div class="select-date-group">
+                  <select id="task-day" class="input-text select-date"></select>
+
+                  <select id="task-month" class="input-text select-date select-month">
+                    <option value="">Select</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+
+                  <select id="task-year" class="input-text select-date"></select>
+
+                  <div id="input-error-deadline" class="input-error">
+                    Select a valid date.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="task-description" class="form-label">Description</label>
+                <textarea id="task-description" class="input-text input-textarea"></textarea>
+                <div id="input-error-description" class="input-error">
+                  Write a description.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="task-priority" class="form-label">Priority</label>
+
+                <select id="task-priority" class="input-text">
+                  <option value="">Select</option>
+                  <option value="Low">Low</option>
+                  <option value="Moderate">Moderate</option>
+                  <option value="High">High</option>
+                </select>
+
+                <div id="input-error-priority" class="input-error">
+                  Select a priority.
+                </div>
+              </div>
+
+              <div class="button-group crud-buttons">
+                <button id="button-create" class="button button-create form-create-mode">
+                  Create
+                </button>
+                <button id="button-save" class="button button-save form-edit-mode">
+                  Save Changes
+                </button>
+                <button id="button-delete" class="button button-delete form-edit-mode">
+                  Delete
+                </button>
+              </div>
+
+              <div class="button-group confirmation-delete">
+                <div class="confirmation-delete-message">
+                  Delete the current task?
+                </div>
+                <button id="button-confirm-yes" class="button button-delete">
+                  Yes
+                </button>
+                <button id="button-confirm-no" class="button button-create">
+                  No
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="/js/task_manager.js"></script>
+</html>

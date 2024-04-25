@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+  background-color: #f0f7f4;
+  margin: 0 20px;
+  font-family: 'Outfit';
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  column-gap: 60px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: Margarine;
+  color: #70abaf;
+  font-size: 24px;
+}
+
+nav div {
+  border: 2px solid #70abaf;
+  padding: 5px 15px;
+  border-radius: 30px;
+  transition: 0.3s ease-out;
+}
+
+nav div a {
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+
+nav div:hover {
+  background-color: #70abaf;
+}
+
+nav div a:hover {
+  color: white;
+}

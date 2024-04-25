@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | KinKeeper</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+  <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+
+<body ng-app="myApp">
+  <nav>
+    <h4 class="logo">KinKeeper</h4>
+    <ul>
+      <a href="#!expense_tracker">
+        <li>BudgetBuddy</li>
+      </a>
+      <a href="#!doc_manage_1">
+        <li>FileFellow</li>
+      </a>
+      <a href="#!scheduler">
+        <li>ScheduleSphere</li>
+      </a>
+    </ul>
+    <div class="profile">
+      <a href="#!dashboard" id="uname">Eishani</a>
+    </div>
+  </nav>
+  <ng-view>
+
+  </ng-view>
+</body>
+<script>
+  var app = angular.module('myApp', ['ngRoute']);
+  app.config(function ($routeProvider) {
+    $routeProvider
+      .when('/expense_tracker', {
+        templateUrl: 'expense_tracker.html',
+      })
+      .when('/doc_manage_1', {
+        templateUrl: 'doc_manage_1.html',
+      })
+      .when('/scheduler', {
+        templateUrl: 'scheduler.html',
+      })
+      .when('/dashboard', {
+        templateUrl: 'task_manager.html',
+      })
+      .otherwise({ redirectTo: '/dashboard' });
+
+  });
+</script>
+</html>

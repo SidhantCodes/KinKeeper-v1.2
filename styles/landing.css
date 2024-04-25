@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+  background-color: #f0f7f4;
+  margin: 15px 40px;
+  font-family: 'Outfit';
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  column-gap: 60px;
+}
+
+nav ul li {
+  display: flex;
+  list-style-type: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo {
+  font-family: Margarine;
+  color: #70abaf;
+  font-size: 38px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: black;
+}
+
+nav button {
+  background-color: #70abaf;
+  border: 0;
+  border-radius: 30px;
+  padding: 6px 30px;
+}
+
+nav button a {
+  text-decoration: none;
+  color: #f0f7f4;
+  font-weight: 500;
+}
+
+main {
+  margin: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+main article {
+  max-width: 700px;
+}
+
+main article h1 {
+  /* font-weight: 800; */
+  font-size: 50px;
+  /* line-height: 90px; */
+}
+
+main article p {
+  font-size: 20px;
+}
+
+main article h1 span {
+  font-family: 'Margarine';
+  color: #70abaf;
+}
+
+main .img {
+  overflow: hidden;
+
+}
+
+main .img img {
+  height: 500px;
+}
+
+/* .features,
+.aboutUs {
+  margin: 80px 0 70px;
+} */
+
+.features{
+  margin: 220px 0;
+}
+
+.features h1,
+.aboutUs h1 {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.featuresBox {
+  display: flex;
+  overflow-x: scroll;
+  column-gap: 30px;
+  align-items: center;
+  transition: ease-in 0.4s;
+}
+
+.featuresBox::-webkit-scrollbar {
+  display: none;
+}
+
+.featuresBox h2 {
+  font-size: 18px;
+  /* font-weight: 400; */
+}
+
+.featuresBox img {
+  height: 300px;
+  border-radius: 10px;
+}
+
+.team {
+  margin: 30px 0;
+  text-align: center;
+}
+
+
+.aboutUs p {
+  font-size: 20px;
+}
+
+.team .teamCar {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgBox img {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.imgBox b {
+  margin-top: 10px;
+}
+
+.imgBox i{
+  color: black;
+  font-size: 24px;
+  margin-top: 10px;
+}
+.feature-content {
+  height: 200px; /* Adjust height as needed */
+  width: 100%; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carousel styles */
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-item .row {
+  justify-content: space-around;
+}
+
+.carousel-item h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.carousel-item p {
+  font-size: 16px;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.carousel-item img {
+  height: 300px;
+  border-radius: 10px;
+  /* align-items: ; */
+}
+
+/* Carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  padding: 14px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #70abaf;
+  border-radius: 30px;
+}
+
+.carousel-control-prev {
+  left: -35px;
+}
+
+.carousel-control-next {
+  right: -35px;
+}

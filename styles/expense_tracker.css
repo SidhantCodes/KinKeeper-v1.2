@@ -1,0 +1,192 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+body {
+    font-family: 'Outfit';
+    margin: 0 10px;
+    background-color: #f0f7f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin: 5px;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #999;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #70abaf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+button:hover {
+    background-color: #518a8e;
+}
+
+.expense-table {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.delete-btn {
+    color: red;
+    cursor: pointer;
+}
+
+.total-amount {
+    padding: 10px;
+    text-align: right;
+    background-color: #f2f2f2;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+body {
+    font-family: 'Outfit', sans-serif; /* Use Outfit as the primary typeface */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f7f4;
+    color: #333; /* Ensuring text is readable */
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures no child element overflows */
+}
+
+h1 {
+    font-family: 'Margarine', cursive; /* Applying Margarine to headers for a unique look */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #70abaf; /* Soft teal color for headers */
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: center;
+    gap: 10px; /* Adds space between form elements */
+}
+
+input[type="text"],
+input[type="number"] {
+    flex: 1 1 200px; /* Flexibility and a minimum basis for responsive inputs */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px; /* Consistent margin for better alignment */
+}
+
+input::placeholder {
+    color: #999; /* Placeholder text color */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #70abaf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #518a8e;
+}
+
+.expense-table {
+    width: 100%; /* Full width for better table management */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px; /* Added margin for separation from form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for subtlety */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #f2f2f2;
+    padding: 15px; /* More padding for a better look */
+}
+
+tbody td {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.delete-btn {
+    color: #d9534f; /* Bootstrap 'btn-danger' color for consistency */
+    cursor: pointer;
+}
+
+.total-amount {
+    margin-top: 20px; /* Margin top for separation from table */
+    padding: 15px;
+    text-align: right;
+    background-color: #f2f2f2;
+    border-radius: 4px; /* Rounded corners for the total display */
+}

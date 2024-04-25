@@ -1,0 +1,193 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup|KinKeeper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <div class="constraints">Note: All fields are required.</div><br>
+        <form id="signupForm" onsubmit="return validateForm()">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                <small class="constraints">*Must contain only 10 digits</small>
+            </div>
+            <div class="form-group">
+                <div>
+                    Gender:
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div> <br>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="userID" placeholder="User ID">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <small class="constraints">*Should contain at least 1 letter, 1 number, 1 special character</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                <small class="constraints"></small>
+            </div>
+            <button type="submit" class="btn btn-block">Signup</button>
+        </form>
+        <div class="text-center mt-3">
+            Already a user? Click <a href="./login_3.html">here</a> to login.
+        </div>
+    </div>
+
+    <script src="/js/signup.js"></script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup|KinKeeper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <div class="constraints">Note: All fields are required.</div><br>
+        <form id="signupForm">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                <small class="constraints">*Must contain only 10 digits</small>
+            </div>
+            <div class="form-group">
+                <div>
+                    Gender:
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div> <br>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="userID" placeholder="User ID">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <small class="constraints">*Should contain at least 1 letter, 1 number, 1 special character</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                <small class="constraints"></small>
+            </div>
+            <button type="submit" class="btn btn-block">Signup</button>
+        </form>
+        <div class="text-center mt-3">
+            Already a user? Click <a href="./login_3.html">here</a> to login.
+        </div>
+    </div>
+    <script src="/js/signup.js"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fName = document.getElementById('firstName').value;
+            const lName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const dob = document.getElementById('dob').value;
+            const userid = document.getElementById('userID').value;
+            const password = document.getElementById('password').value;
+            console.log(userid);
+
+            fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ fName, lName, email, phone, gender, dob, userid, password }),
+                credentials: 'include'
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes('Credentials validated and added.')) {
+                    window.location.href = '/login_3.html';
+                } else {
+                    // Show an error message
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+
+</html>
