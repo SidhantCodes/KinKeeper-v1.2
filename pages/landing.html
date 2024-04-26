@@ -132,7 +132,7 @@
       optimize living spaces, we seek to redefine household organization and make a positive impact on families and
       communities worldwide.</p>
   </section>
-  <section class="team" id="team">
+  <!-- <section class="team" id="team">
     <h1>Meet the team</h1>
     <div class="teamCar">
       <div class="sidhant imgBox">
@@ -151,8 +151,47 @@
         <a href="https://github.com/AkshayO3"><i class="fa-brands fa-github"></i></a>
       </div>
     </div>
+  </section> -->
+  <section class="team" id="team">
+    <h1>Meet the team</h1>
+    <div class="teamCar">
+      <div class="sidhant imgBox">
+        <img src="" alt="">
+        <b></b>
+        <a href=""><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="eishani imgBox">
+        <img src="" alt="">
+        <b></b>
+        <a href=""><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div class="akshay imgBox">
+        <img src="" alt="">
+        <b></b>
+        <a href=""><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
   </section>
+  
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Fetch JSON data
+  fetch('/constants/team.json')
+    .then(response => response.json())
+    .then(data => {
+      // Loop through each team member and update HTML content
+      data.forEach(member => {
+        const memberDiv = document.querySelector(`.${member.name.toLowerCase().split(' ')[0]}`); // Select div by class
+        if (memberDiv) {
+          memberDiv.querySelector('img').src = member.image;
+          memberDiv.querySelector('img').alt = member.name;
+          memberDiv.querySelector('b').textContent = member.name;
+          memberDiv.querySelector('a').href = member.github;
+        }
+      });
+    })
+    .catch(error => console.error('Error fetching team data:', error));
+</script>
 
 </html>

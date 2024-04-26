@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="fName">First Name:</label><br>
+        <input type="text" id="fName" name="fName"><br>
+        <label for="lName">Last Name:</label><br>
+        <input type="text" id="lName" name="lName"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br>
+        <label >Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br>
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob"><br>
+        <label for="userid">User ID:</label><br>
+        <input type="text" id="userid" name="userid"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Register">
+    </form>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = new FormData(this); // Create a FormData object from the form
+
+        // Convert formData to JSON
+        var formJSON = {};
+        formData.forEach((value, key) => {
+            formJSON[key] = value;
+        });
+        console.log(formData)
+
+        fetch('http://localhost:3000/register', { // Send the form data to the server
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formJSON)
+        })
+        .then(response => response.text()) // Get the response text
+        .then(text => {
+            console.log('Server response:', text); // Log the raw server response
+            return JSON.parse(text); // Then try to parse it as JSON
+        })
+        .then(data => console.log(data)) // Log the parsed JSON data
+        .catch(error => console.error('Error:', error)); // Log any errors
+        });
+    </script>
+</body>
+</html>

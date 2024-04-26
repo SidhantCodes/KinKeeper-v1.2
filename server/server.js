@@ -17,7 +17,7 @@ app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {maxAge: 600 * 1000},
+    cookie: {maxAge: 600 * 1000,sameSite:'strict'},
     rolling: true
 }))
 
@@ -25,7 +25,8 @@ function checkSession(req, res, next) {
     if (req.session.user) next()
     else res.send("Unauthorized,log in.")
 }
-mongoose.connect(process.env.URI).then(() => {
+
+mongoose.connect('mongodb://localhost:27017/kinkeeper').then(() => {
     console.log("Connected to the database.")
 });
 const connection = mongoose.connection;
@@ -74,7 +75,7 @@ const Expense = mongoose.model('Expense', expenseSchema)
 const Schedule = mongoose.model('Schedule', scheduleSchema)
 
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../client/pages/landing.html'));
+    res.sendFile(path.join(__dirname, '../pages/landing.html'));
 } )
 
 app.post("/register", async (req, res) => {
@@ -102,10 +103,21 @@ app.post("/login", async (req, res) => {
     let ifExists = await User.findOne({userid: req.body.userid, password: req.body.password})
     if (ifExists) {
         req.session.user = ifExists;
-        res.send("Login Successful --> " + req.session.user._id)
+        // res.send("Login Successful --> " + req.session.user._id)
+        res.redirect('http://localhost:5500/pages/dashboard.html');
     } else
         res.send("Email or password not correct.")
 });
+
+app.get('/getUser', checkSession, async(req, res) => {
+    // res.json(req.session.user);
+
+    res.json({fName:req.session.user.fName});
+    // console.log(req.session.user.fName);
+});
+
+
+
 
 app.get("/login", (req, res) => {
     res.send("Please log in.")
