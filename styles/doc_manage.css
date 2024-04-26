@@ -1,3 +1,122 @@
+/* body {
+    background-color: #f0f7f4;
+    margin: 32px 30px;
+    font-family: 'Outfit';
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    column-gap: 60px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    font-family: Margarine;
+    color: #70abaf;
+    font-size: 24px;
+}
+
+nav div {
+    border: 2px solid #70abaf;
+    padding: 5px 15px;
+    border-radius: 30px;
+    transition: 0.3s ease-out;
+}
+
+nav div a {
+    text-decoration: none;
+    transition: 0.3s ease-out;
+}
+
+nav div:hover {
+    background-color: #70abaf;
+}
+
+nav div a:hover {
+    color: white;
+}
+
+.page-heading {
+    text-align: center;
+    color: #47798C;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: 'Outfit';
+    font-weight: 800;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    margin: 10px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-bar img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 90px 30px;
+    justify-content: space-between;
+    gap: 26px;
+    cursor: pointer;
+}
+
+.category {
+    width: calc(25% - 20px);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.category h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #70abaf;
+    margin-bottom: 10px;
+    margin-left: 20px;
+} */
+
 body {
     background-color: #f0f7f4;
     margin: 32px 30px;
@@ -87,9 +206,10 @@ nav div a:hover {
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    margin: 90px auto;
+    justify-content: space-between;
+    gap: 26px;
     cursor: pointer;
-    margin-bottom: 80px;
 }
 
 .category {
@@ -115,4 +235,84 @@ nav div a:hover {
     color: #70abaf;
     margin-bottom: 10px;
     margin-left: 20px;
+}
+
+.btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 7px 17px;
+    background-color: #47798C;
+    color: white;
+    font-weight: 500;
+    font-family: 'Outfit';
+    border-radius: 30px;
+}
+
+.btn:hover{
+    background-color: #70abaf;
+    color: white;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 0.6px rgba(0, 0, 0, 0.233);
+    padding: 30px 50px;
+}
+
+/* Style for the close button */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    padding: 2px 6px;
+}
+
+.fileUpload{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+#categorySelect{
+    background-color: #70abaf;
+    color: white;
+    font-weight: 600;
+    border:none;
+    padding: 6px 10px;
+}
+#fileNameInput{
+    font-weight: 600;
+    padding: 6px 10px;
+    color: #47798C;
+}
+
+#fileNameInput:focus{
+    outline: none;
+}
+
+#uploadButton{
+    background-color: #70abaf;
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 6px 20px;
+    border-radius: 9999px;
+}
+#uploadButton:hover{
+    background-color: #47798C;
 }

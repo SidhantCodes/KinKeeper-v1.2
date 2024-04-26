@@ -11,60 +11,71 @@
 
 <body>
     <h1 class="page-heading">FileFellow</h1>
-    <div class="search-bar">
-        <input type="text" placeholder="Search documents ...">
-        <img src="/images/camera_icon.png" alt="Camera Icon">
-    </div>
 
     <div class="container">
-        <!-- Electronics Category -->
         <div class="category">
             <img src="/images/electronics_icon.png" alt="Electronics">
             <h2>Electronics</h2>
         </div>
-
-        <!-- Home Services Category -->
-        <div class="category">
-            <img src="/images/home_services_icon.png" alt="Home Services">
-            <h2>Home Services</h2>
-        </div>
-
-        <!-- Payments Category -->
-        <div class="category">
-            <img src="/images/payments_icon.png" alt="Payments">
-            <h2>Payments</h2>
-        </div>
-
-        <!-- Maintenance & Repairs Category -->
-        <div class="category">
-            <img src="/images/contacts_icon.png" alt="Maintenance & Repairs">
-            <h2>Maintenance & Repairs</h2>
-        </div>
-
-        <!-- Groceries & Supplies Category -->
         <div class="category">
             <img src="/images/groceries_icon.png" alt="Groceries & Supplies">
             <h2>Groceries & Supplies</h2>
         </div>
-
-        <!-- Health & Wellness Category -->
         <div class="category">
             <img src="/images/health_icon.png" alt="Health & Wellness">
             <h2>Health & Wellness</h2>
         </div>
-
-        <!-- Travel & Vacations Category -->
-        <div class="category">
-            <img src="/images/travel_icon.png" alt="Travel & Vacations">
-            <h2>Travel & Vacations</h2>
-        </div>
-
-        <!-- Legal & Administrative Category -->
         <div class="category">
             <img src="/images/legal_icon.png" alt="Legal & Administrative">
             <h2>Legal & Administrative</h2>
         </div>
     </div>
+    <button class="btn">Upload New File</button>
+
+    <!-- Popup window -->
+    <div id="popup" style="display: none;" class="popup">
+        <button class="close-btn">🗙</button>
+        <div class="fileUpload">
+            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt">
+        <input type="text" id="fileNameInput" placeholder="Enter file name">
+        <select id="categorySelect">
+            <option value="Electronics">Electronics</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Health">Health</option>
+            <option value="Legal">Legal</option>
+        </select> 
+        <button id="uploadButton">Upload</button>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".btn").click(function() {
+                $("#popup").show();
+                $(".btn").hide();
+            });
+            
+            $(".close-btn").click(function(event) {
+                $("#popup").hide();
+                $(".btn").show();
+                event.stopPropagation();
+            });
+            
+            
+            $("#uploadButton").click(function() {
+                var file = $("#fileInput").prop("files")[0];
+                var fileName = $("#fileNameInput").val();
+                var category = $("#categorySelect").val();
+                
+                console.log("File:", file);
+                console.log("File Name:", fileName);
+                console.log("Category:", category);
+                
+            });
+        });
+    </script>
 </body>
 
 </html>
