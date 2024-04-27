@@ -19,15 +19,19 @@
 
   <!-- Modal for adding new event -->
   <div id="newEventModal" style="display:none;">
-    <button id="closeModal" style="float: right;">&times;</button>
-    <input type="text" id="eventDate" placeholder="Day (e.g., 28)">
-    <input type="text" id="eventMonth" placeholder="Month (e.g., Mar)">
-    <input type="text" id="eventName" placeholder="Event Name">
-    <input type="text" id="eventDay" placeholder="Day of the Week (e.g., Monday)">
-    <input type="text" id="eventTime" placeholder="Time (e.g., 12:30 PM - 2:00 PM)">
-    <input type="text" id="eventLocation" placeholder="Location (e.g., Cafe)">
-    <input type="text" id="eventDescription" placeholder="Description">
-    <button id="saveEvent">Save Event</button>
+    <form action="http://localhost:3000/schedule" method="post">
+        <label for="name">Event Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="time">Time:</label><br>
+        <input type="text" id="time" name="time"><br>
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location"><br>
+        <label for="description">Description:</label><br>
+        <input type="text" id="description" name="description"><br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date"><br>
+        <input type="submit" value="Submit">
+    </form>
   </div>
 
   <script>
@@ -91,6 +95,9 @@
         }
 
         // Initially check if there are any events
+        // $(window).on('load', function() {
+        //     updateEmptyMessageDisplay();
+        // });
         updateEmptyMessageDisplay();
     });
   </script>

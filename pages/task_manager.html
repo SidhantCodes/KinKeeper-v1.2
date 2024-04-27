@@ -10,7 +10,7 @@
 <body ng-app="myApp">
   <main>
     <h1 id="head">
-      Hello
+      Welcome back,
     </h1>
     <p id="quote">
       "Embrace the sunshine in your soul and let your smile paint the world in bright hues."
@@ -129,4 +129,19 @@
   </main>
 </body>
 <script src="/js/task_manager.js"></script>
+<script>
+  $(document).ready(function() {
+      $.ajax({
+          url: 'constants/quotes.json',
+          method: 'GET',
+          dataType: 'json',
+          success: function(data) {
+              var quotes = data.quotes;
+              var randomIndex = Math.floor(Math.random() * quotes.length);
+              var randomQuote = quotes[randomIndex].text;
+              $('#quote').text(randomQuote);
+          }
+      });
+  });
+  </script>
 </html>

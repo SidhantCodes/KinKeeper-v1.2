@@ -17,7 +17,7 @@ app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {maxAge: 600 * 1000,sameSite:'strict'},
+    cookie: {maxAge: 600 * 1000,secure:false},
     rolling: true
 }))
 
@@ -154,9 +154,10 @@ app.post("/tasks", checkSession, async (req, res) => {
     await newTask.save();
     res.send("Task saved successfully.")
 })
-
-app.get("/expense", checkSession, async (req, res) => {
-    let expenses = await Expense.find({uid: req.session.user._id})
+//checkSession,
+app.get("/expense",  async (req, res) => {
+    let expenses = await Expense.find({uid: '662b6f69d5da9979f0caec5d'})
+    console.log(req.session.user);
     if (expenses.length === 0) res.send("You have no expenses")
     else res.json(expenses)
 })

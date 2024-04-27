@@ -15,6 +15,9 @@
   <nav>
     <h4 class="logo">KinKeeper</h4>
     <ul>
+      <a href="#!dashboard">
+        <li>Dashboard</li>
+      </a>
       <a href="#!expense_tracker">
         <li>BudgetBuddy</li>
       </a>
@@ -25,8 +28,8 @@
         <li>ScheduleSphere</li>
       </a>
     </ul>
-    <div class="profile">
-      <a href="#!dashboard" id="uname">{{ user.fName }}</a>
+    <div>
+      <button class="logout">Logout</button>
     </div>
   </nav>
   <ng-view>
@@ -52,12 +55,17 @@
       .otherwise({ redirectTo: '/dashboard' });
 
   });
+</script>
 
-  app.controller('UserController', function($scope, $http) {
-    $http.get('http://localhost:3000/getUser')
-      .then(function(response) {
-        $scope.user = response.data;
-      });
-  });
+<script>
+  $(document).ready(function() {
+    $(".logout").click(function() {
+        $.get("http://localhost:3000/logout", function(data, status) {
+            if(status === "success") {
+                window.location.href = "http://localhost:5500/pages/landing.html";
+            }
+        });
+    });
+});
 </script>
 </html>

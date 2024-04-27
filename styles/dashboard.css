@@ -50,3 +50,20 @@ nav div:hover {
 nav div a:hover {
   color: white;
 }
+
+.logout{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  /* font-weight: 400; */
+  font-weight: 600;
+  color: #70abaf; 
+}
+
+.logout:hover{
+  color: white;
+}
+
+.profile:hover{
+  color: white;
+}

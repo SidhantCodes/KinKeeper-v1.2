@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    var username = $('#uname').text();
-    $('#head').text('Hello ' + username + ',');
+    // var username = $('#uname').text();
+    $('#head').text('Welcome back,');
     $("#button-add").on("click", () => {
       enableFormCreateMode();
       clearForm();
